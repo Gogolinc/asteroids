@@ -1,6 +1,3 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
 import pygame
 import sys
 from constants import *
@@ -19,8 +16,8 @@ def main():
  
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
-    AsteroidField.containers = (updatable)
     Shot.containers = (shots, updatable, drawable)
+    AsteroidField.containers = (updatable)
    
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     black = pygame.Color(0, 0, 0)
@@ -38,6 +35,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+
         screen.fill(black)
 
         for updatableThing in updatable:
